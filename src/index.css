@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(135deg, #000F2C 0%, #00235F 50%, #0455BF 100%);
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../public/ucl-pattern.svg');
+    background-repeat: repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* UCL Theme Specific Styles */
+.ucl-card {
+  @apply bg-[#00235F]/60 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ucl-title {
+  @apply text-white font-bold;
+  text-shadow: 0 0 30px rgba(4, 85, 191, 0.7);
+}
+
+.ucl-subtitle {
+  @apply text-white/60 text-sm font-medium;
+}
+
+.ucl-button {
+  @apply bg-[#0455BF] text-white font-semibold px-4 py-2 rounded-md 
+         hover:bg-[#0455BF]/90 transition-colors duration-200
+         focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ring-offset-[#00235F];
+}
+
+.ucl-stats-card {
+  @apply bg-[#00235F]/80 backdrop-blur-md p-6 rounded-lg shadow-lg
+         hover:shadow-xl transition-all duration-300
+         border border-white/10;
+}
+
+.ucl-progress-bar {
+  @apply h-2 rounded-full bg-white/30 overflow-hidden;
+}
+
+.ucl-progress-fill {
+  @apply h-full bg-[#0455BF] rounded-full transition-all duration-500
+         animate-pulse-subtle;
+}
+
+.ucl-rank-badge {
+  @apply w-8 h-8 rounded-full bg-[#0455BF] text-white font-bold
+         flex items-center justify-center text-sm shadow-lg
+         animate-bounce-slow;
+}
+
+.ucl-table {
+  @apply w-full border-collapse bg-[#000F2C]/40 backdrop-blur-sm rounded-lg overflow-hidden;
+}
+
+.ucl-table th {
+  @apply bg-[#00235F]/90 text-white px-4 py-3 text-left font-semibold border-b border-white/10;
+}
+
+.ucl-table tr {
+  @apply hover:bg-[#0455BF]/40 transition-colors duration-200;
+}
+
+.ucl-table td {
+  @apply px-4 py-3 border-b border-white/10 text-white;
+}
+
+/* Loading Animation */
+.ucl-loading {
+  @apply relative w-16 h-16;
+}
+
+.ucl-loading::before {
+  content: '';
+  @apply absolute inset-0 rounded-full border-4 border-white/30;
+}
+
+.ucl-loading::after {
+  content: '';
+  @apply absolute inset-0 rounded-full border-4 border-t-white
+         animate-spin-slow;
+}
+
+/* Header Animation */
+.ucl-header {
+  @apply relative overflow-hidden;
+}
+
+.ucl-header::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-white/20 to-transparent
+         animate-pulse-subtle;
+}
+
+/* Filter Styles */
+.ucl-filter {
+  @apply bg-[#00235F]/60 border border-white/10 text-white rounded-md px-3 py-2
+         focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ring-offset-[#00235F];
+}
+
+.ucl-search {
+  @apply bg-[#00235F]/60 border border-white/10 text-white rounded-md px-4 py-2
+         placeholder-white/50 w-full
+         focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ring-offset-[#00235F];
+}
+
+.ucl-reset-button {
+  @apply bg-[#0455BF] text-white px-4 py-2 rounded-md font-semibold
+         hover:bg-[#0455BF]/90 transition-colors duration-200
+         focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ring-offset-[#00235F];
+}
+
+/* Stats Display */
+.ucl-stat-value {
+  @apply text-4xl font-bold text-white;
+  text-shadow: 0 0 20px rgba(4, 85, 191, 0.5);
+}
+
+.ucl-stat-label {
+  @apply text-white/70 text-sm font-medium;
+}
+
+/* Navigation */
+.ucl-nav-link {
+  @apply text-white/80 hover:text-white transition-colors duration-200;
+}
+
+.ucl-nav-link.active {
+  @apply text-white font-semibold;
+}
+
+/* Player Stats */
+.ucl-player-name {
+  @apply text-white font-semibold hover:text-[#0455BF] transition-colors duration-200;
+}
+
+.ucl-team-name {
+  @apply text-white/70 text-sm;
+}
+
+.ucl-stat-number {
+  @apply text-white font-medium;
+}
+
+.ucl-section-title {
+  @apply text-white text-xl font-bold mb-4;
+}
+
+.ucl-section-subtitle {
+  @apply text-white/70 text-sm mb-2;
+}
+
+/* Stars Pattern */
+.stars-pattern {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: twinkle 3s infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+} 
