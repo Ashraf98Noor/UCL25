@@ -2,7 +2,7 @@
   "name": "ucl-stats-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ashrafnoor.github.io/UCL-24-25",
+  "homepage": "https://Ashraf98Noor.github.io/UCL25",
   "dependencies": {
     "@types/node": "^20.0.0",
     "@types/papaparse": "^5.3.16",
@@ -28,7 +28,7 @@
     "eslint": "^8.45.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.33.2",
-    "gh-pages": "^6.3.0",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.0",
     "tailwindcss": "^3.3.0"
   },
