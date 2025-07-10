@@ -3,13 +3,19 @@ import { Player } from '../types/player';
 
 export const loadCSVData = async (): Promise<Player[]> => {
   try {
-    console.log('Attempting to fetch CSV data...');
-    const response = await fetch(process.env.PUBLIC_URL + '/UCL_24_25_Key_Data - Sheet1.csv');
+    const csvUrl = process.env.PUBLIC_URL + '/UCL_24_25_Key_Data - Sheet1.csv';
+    console.log('Attempting to fetch CSV data from:', csvUrl);
+    const response = await fetch(csvUrl);
     if (!response.ok) {
+      console.error('Failed to fetch CSV data:', {
+        status: response.status,
+        statusText: response.statusText,
+        url: csvUrl
+      });
       throw new Error(`Failed to fetch CSV data: ${response.status} ${response.statusText}`);
     }
     const csvText = await response.text();
-    console.log('CSV data fetched successfully, parsing...');
+    console.log('CSV data fetched successfully, first 100 chars:', csvText.substring(0, 100));
     
     return new Promise((resolve, reject) => {
       Papa.parse(csvText, {
@@ -39,6 +45,7 @@ export const loadCSVData = async (): Promise<Player[]> => {
             reject(new Error('Failed to parse CSV data'));
             return;
           }
+          console.log('CSV parsing complete, found', results.data.length, 'players');
           resolve(results.data);
         },
         error: (error: Error) => {
