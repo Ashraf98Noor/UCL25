@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/UCL25/static/css/main.e1e068f1.css",
+    "main.js": "/UCL25/static/js/main.279f508a.js",
+    "index.html": "/UCL25/index.html",
+    "static/media/ucl-pattern.svg": "/UCL25/static/media/ucl-pattern.66f1f59819d52476f328.svg",
+    "main.e1e068f1.css.map": "/UCL25/static/css/main.e1e068f1.css.map",
+    "main.279f508a.js.map": "/UCL25/static/js/main.279f508a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1e068f1.css",
+    "static/js/main.279f508a.js"
+  ]
+}
