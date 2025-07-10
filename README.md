@@ -1,7 +1,7 @@
 # UCL 24/25 Statistics Dashboard
 
 A dynamic sports statistics website built with React, TypeScript, and Tailwind CSS for analyzing UEFA Champions League 2024/25 player performance data.
-
+Created using Cursor AI & ChatGPT (o4 mini high)
 ## Features
 
 ### 🏆 Core Functionality
