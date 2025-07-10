@@ -54,7 +54,7 @@ A dynamic sports statistics website built with React, TypeScript, and Tailwind C
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Ashraf98Noor/UCL25.git
    cd ucl-stats-website
    ```
 
@@ -193,4 +193,4 @@ This project is licensed under the MIT License.
 
 - UEFA Champions League for the data
 - React and TypeScript communities
-- Tailwind CSS for the styling framework 
+- Tailwind CSS for the styling framework
