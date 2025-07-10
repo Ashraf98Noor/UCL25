@@ -2,7 +2,7 @@
 ![AI-Assisted](https://img.shields.io/badge/AI-Assisted-brightgreen)
 
 A dynamic sports statistics website built with React, TypeScript, and Tailwind CSS for analyzing UEFA Champions League 2024/25 player performance data.
-
+[VIEW DASHBOARD](https://ashraf98noor.github.io/UCL25/)
 ## Features
 
 ### 🏆 Core Functionality
